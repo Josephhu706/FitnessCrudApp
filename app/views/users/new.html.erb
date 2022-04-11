@@ -1,0 +1,24 @@
+<% if @user.errors.any? %>
+    <ol>
+        <% @user.errors.full_messages.each do |msg|%> <!--this writes the error messages for us in @user.errors.full_messages-->
+            <li><%= msg %> </li> <!--sign up error message-->
+        <% end %>
+    </ol>
+<%end%>
+<div class="wrapper">
+    <%= form_for @user, :html => {:class => "form-signin"} do |f| %>
+        <h2 class="form-signin-heading text-center">New User</h2>
+        <%= f.label :email, 'Email address', class: 'sr-only' %>
+        <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email Address' %>
+
+
+        <%= f.label :password, 'Password', class: 'sr-only' %>
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
+
+        <%= f.label :password_confirmation, "Confirm Password",  class: 'sr-only' %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Password' %>
+
+
+        <%= f.submit "Sign Up!", class:'btn btn-lg btn-primary btn-block'%>
+    <%end%>
+</div>

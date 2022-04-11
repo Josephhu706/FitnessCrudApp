@@ -1,0 +1,9 @@
+<h1><%=@current_user.email%>'s DECKLISTS</h1>
+<%@decklists.each do |decklist|%>
+    <%if decklist.user_id == @current_user.id%>
+<!--if decklist.user_id == @current_user.id-->
+        <%= image_tag decklist.cover, :class => 'cover-art' if decklist.cover.present? %>
+        <li>name: <%=link_to decklist.name, decklist%></li>
+    <%end%>
+        <!--someway to show the number of cards-->
+<% end %>

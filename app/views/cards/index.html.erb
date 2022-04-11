@@ -1,0 +1,8 @@
+<h1><%=@current_user.email%>'s Card Library</h1>
+
+<%@current_user.cards.each do |card|%>
+<!--if card is in users decklists and belongs to the user? show all the cards-->
+        <h2>name: <%=link_to card.title, card%></h2>
+        <%= image_tag card.image, :class => 'cover-art' if card.image.present? %>
+<% end %>
+

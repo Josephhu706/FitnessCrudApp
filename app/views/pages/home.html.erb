@@ -1,0 +1,5 @@
+<h1>MTG</h1>
+
+    <%if @current_user.present? %>
+    <h2>Welcome Back<%=@current_user.email%>!</h2><!-- if someone is logged in before use initiate the action, we welcome them back, otherwise skip the line-->
+    <%end%>

@@ -1,0 +1,13 @@
+
+<div class="wrapper">
+    <%= form_tag login_path, class:"form-signin" do %> <!--when we sign into the login, redirect to login_path-->
+        <h2 class="form-signin-heading text-center">Log In</h2>
+        <%= label_tag :email, 'Email address', class: 'sr-only'%>
+        <%= email_field_tag :email,"", class: 'form-control', autofocus: true, placeholder: 'Email Address' %>
+
+        <%= label_tag :password, 'Password', class: 'sr-only'%>
+        <%= password_field_tag :password,"", class: 'form-control',autocomplete: "off", placeholder: 'Password' %>
+
+        <%= submit_tag "Sign in", class:'btn btn-lg btn-primary btn-block'%>
+    <%end %>
+</div>

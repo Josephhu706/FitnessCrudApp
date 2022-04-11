@@ -1,0 +1,15 @@
+<h1>Cards in <%=@decklist.name%> Deck</h1>
+
+<ul>
+    <%@decklist.cards.each do |card|%>
+    <li><%=card.title%></li>
+    <!--find cards in join table that have same id as decklist-->
+    <%end%>
+</ul>
+
+    <div class="controls">
+        <%= link_to "Edit Decklist", edit_decklist_path(@decklist.id) %> <!--need to be specific because we are using @artist-->
+        <%= link_to "Delete Decklist", @decklist, :method => 'delete', :data => {:confirm => 'Are you sure?'} %> 
+    </div>
+
+    

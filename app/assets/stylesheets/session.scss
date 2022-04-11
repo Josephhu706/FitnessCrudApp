@@ -1,0 +1,27 @@
+body{
+    background-color: #eee;
+}
+.wrapper{
+    margin: 80px;
+}
+.form-signin{
+    max-width: 380px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 15px 40px 50px;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+}
+.form-signin .form-signin-heading, .form-signin{
+    margin-bottom: 30px;
+}
+
+.form-signin .form-control{
+    padding: 10px;
+}
+.btn{
+    margin-top: 10px;
+}
+.sr-only{
+    margin-top: 10px;
+}

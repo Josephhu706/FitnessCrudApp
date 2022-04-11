@@ -1,0 +1,31 @@
+<h1>Search results</h1>
+
+<%if @info["object"] == "error" || @info["code"] == "not_found"%>
+    <h1>NO CARDS FOUND</h1>
+<%else%>
+    <%@info["data"].each do|card|%>
+        <%thumbnail = card.dig"image_uris", "small"%>
+    <ul>
+        <li><%= card["name"]%></li>
+        <li><img class="feature" src="<%=thumbnail%>"></li>
+         <li>$<%= card.dig"prices","usd" %></li>
+         <li>Set Name:<%= card["set_name"]%></li>
+        <li>Information:<%= card["oracle_text"]%></li>
+    </ul>
+        <%=form_for Card.new do |f|%>
+            <%=f.hidden_field :title, :value=>card["name"] %>
+            <%image = card.dig"image_uris", "normal"%>
+            <%=f.hidden_field :image, :value=>image %>
+            <%price = card.dig"prices","usd"%>
+            <%=f.hidden_field :price, :value=>price %>
+            <%=f.hidden_field :release,:value=>card["released_at"]%>
+            <%=f.hidden_field :rarity, :value=>card["rarity"]%>
+            <%=f.hidden_field :oracle, :value=>card["oracle_text"]%>
+            <%=f.hidden_field :oracle, :value=>card["oracle_text"]%>
+            <!--i need to give it to a user-->
+            <%=f.submit "create card" %>
+        <%end%>
+    <%end%>
+<%end%>
+
+

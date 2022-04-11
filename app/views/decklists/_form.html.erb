@@ -1,0 +1,11 @@
+<!--this is a partial, it starts with an underscore-->
+
+    <%= form_for @decklist do |f|%>
+    <%=f.collection_check_boxes(:card_ids, @current_user.cards, :id, :title)%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :cover %>
+    <%=f.text_field :cover %>
+    <%=f.submit%>
+<%end%>
