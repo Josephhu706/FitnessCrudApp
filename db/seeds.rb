@@ -27,7 +27,8 @@ d3 = Decklist.create :name => 'Atraxa'
 d4 = Decklist.create :name => 'One Punch Angel'
 
 puts "#{Decklist.count} decklists"
-u1.cards <<
+u1.cards << c1 
+u2.cards << c12 
 puts "Decklists and Cards"
 
 d1.cards << c7 << c8 << c9
