@@ -21,10 +21,10 @@ c12 = Card.create :title => 'Admonition Angel', :price => '16.02', :rarity => "m
 puts "#{Card.count} cards"
 
 Decklist.destroy_all
-d1 = Decklist.create :name => 'Breya Artifact' , :description =>'Standard Artifact Red Blue Deck', :cover=>"https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2018/06/Goblin-Haberdasher-Unstable-MtG-Art.jpg"
-d2 = Decklist.create :name => 'Sahlili Artifact', :description =>'Commander Artifact Competition Deck', :cover=>"https://media.wizards.com/images/magic/daily/ur/ur259_goblingrenade.jpg"
-d3 = Decklist.create :name => 'Atraxa', :description =>'Green Deck to piss people off', :cover=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvI_eKI5AmRAX1VzDiFSr8kiY2h-X0HJxF1A&usqp=CAU"
-d4 = Decklist.create :name => 'One Punch Angel', :description =>'Double Damage Red White Deck', :cover=>"https://media.magic.wizards.com/images/hero/38kuy5vb2c_768_icon.jpg"
+d1 = Decklist.create :name => 'Breya Artifact' , :description =>'Standard Artifact Red Blue Deck'
+d2 = Decklist.create :name => 'Sahlili Artifact', :description =>'Commander Artifact Competition Deck'
+d3 = Decklist.create :name => 'Atraxa', :description =>'Green Deck to piss people off'
+d4 = Decklist.create :name => 'One Punch Angel', :description =>'Double Damage Red White Deck'
 
 puts "#{Decklist.count} decklists"
 

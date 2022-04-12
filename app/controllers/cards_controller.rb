@@ -11,7 +11,6 @@ class CardsController < ApplicationController
   def create
     card= Card.create card_params
     decklist = Decklist.find params[:card][:decklist_ids]
-
     decklist.cards << card
     redirect_to card
   end

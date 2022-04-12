@@ -1,13 +1,13 @@
 <!--this is a partial, it starts with an underscore-->
 
-    <%= form_for @decklist do |f|%>
+    <%= form_for(@decklist, :html=>{:multipart => true}) do |f|%>
     <%=f.collection_check_boxes(:card_ids, @current_user.cards.uniq, :id, :title)%>
     <!--i want current users cards where -->
     <%= f.label :name %>
     <%= f.text_field :name %>
 
     <%= f.label :cover %>
-    <%=f.text_field :cover %>
+    <%=f.cl_image_upload :cover %>
 
     <%= f.label :description %>
     <%=f.text_field :description %>

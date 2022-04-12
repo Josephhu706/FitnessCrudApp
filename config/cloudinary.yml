@@ -1,19 +1,18 @@
-23---
 development:
-  cloud_name: dfovjd17t
-  api_key: '646674315969583'
-  api_secret: u0PJuDJVhjs0j5ZjZe95UPQImGk
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
-  static_file_support: false
+  static_image_support: false
 production:
-  cloud_name: dfovjd17t
-  api_key: '646674315969583'
-  api_secret: u0PJuDJVhjs0j5ZjZe95UPQImGk
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
-  static_file_support: true
+  static_image_support: true
 test:
-  cloud_name: dfovjd17t
-  api_key: '646674315969583'
-  api_secret: u0PJuDJVhjs0j5ZjZe95UPQImGk
+  cloud_name: Rails.application.secrets.cloudinary_cloud_name
+  api_key: Rails.application.secrets.cloudinary_api_key
+  api_secret: Rails.application.secrets.cloudinary_api_secret
   enhance_image_tag: true
-  static_file_support: false
+  static_image_support: false

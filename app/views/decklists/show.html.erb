@@ -1,5 +1,5 @@
 <h1>Cards in <%=@decklist.name%> Deck</h1>
-
+    <%= cl_image_tag(@decklist.cover)%>
 <ul>
     <%@decklist.cards.each do |card|%>
     <li><%=card.title%></li>

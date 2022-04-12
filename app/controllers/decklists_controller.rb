@@ -3,13 +3,24 @@ class DecklistsController < ApplicationController
     @decklists = Decklist.all
   end
 
+  def show
+    @decklist = Decklist.find params[:id]
+  end
+
   def new
     @decklist = Decklist.new
   end
 
   def create
-    decklist = Decklist.create decklist_params
-    redirect_to decklist
+    decklist = Decklist.new decklist_params
+    decklist.user_id = @current_user.id
+    if params[:file].present?
+      req=Cloudinary::Uploader.upload(params[:file])
+      decklist.cover = req["public_id"]
+    end
+    decklist.update_attributes(decklist_params)
+    decklist.save
+    redirect_to decklist_path(decklist)
   end
 
   def edit
@@ -20,12 +31,13 @@ class DecklistsController < ApplicationController
   def update
     decklist = Decklist.find params[:id]
     decklist.user_id = @current_user.id
-    decklist.update decklist_params
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      decklist.cover = req["public_id"]
+    end
+    decklist.update_attributes(decklist_params)
+    decklist.save
     redirect_to decklist
-  end
-
-  def show
-    @decklist = Decklist.find params[:id]
   end
 
   def destroy

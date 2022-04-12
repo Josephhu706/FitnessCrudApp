@@ -1,18 +1,58 @@
 <h1>Find A New Card</h1>
+
+
+<div class="search-form">
     <form action="/search">  
-        <div class="form-group">
-            <label>
-                Search Parameter:
-                <select name="search_parameter" class="form-control">
+        <div class="wrapper-search">
+            <div class="search-input">
+                <select name="search_parameter" class="form-select">
                     <option value="name">Search by Name</option>
                     <option value="color">Search by Color</option>
                     <option value="type">Search by Type</option>
                 </select>
-            </label>
-            <label>
-                Enter Card:
-                <input type = "text" name="card" placeholder="Ponder" required>
-            </label>
+            </div>
+
+            <div class="search-input">
+                <input type = "text" name="card" class="form-control form-input" placeholder="Enter search term..." required>
+            </div>
+            <div class= btn-div>
+                <button class="btn btn-primary search-btn">Find Card</button>
+            </div>
         </div>
-        <button>Find Card</button>
     </form>
+</div>
+
+<div class="search-explain">
+    <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-white">
+                    <div class="card-header">How To Search By Name</div>
+                        <div class="card-body">
+                            <p class="card-text">Search card by name case insensitive, either exact or approximate spelling accepted.</p>
+                            <footer class="blockquote-footer">Example: Search 'ponder' for the card "Ponder"</footer>
+                        </div>
+                    </div>
+                <!--</div>-->
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-white">
+                    <div class="card-header">How To Search By Color</div>
+                        <div class="card-body">
+                            <p class="card-text">Accepts full color names like blue or the abbreviated color letters w, u, r, b and g.</p>
+                            <footer class="blockquote-footer">Example: Search 'rg' for cards that are red and green</footer>
+                        </div>
+                    </div>
+                </div>
+                <!--</div>-->
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-white">
+                    <div class="card-header">How To Search By Type</div>
+                        <div class="card-body">
+                            <p class="card-text">Find cards of a certain type by supertype, card type or subtype</p>
+                            <footer class="blockquote-footer">Example: Search 'creature' for a creature type or 'goblin' for a goblin subtype. </footer>
+                        </div>
+                    </div>
+                </div>
+                <!--</div>-->
+    </div>
+</div>

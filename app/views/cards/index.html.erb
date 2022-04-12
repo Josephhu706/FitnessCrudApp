@@ -1,5 +1,5 @@
 <h1><%=@current_user.email%>'s Card Library</h1>
-<div class="container">
+<div class="cards-container">
         <%@current_user.cards.uniq.each do |card|%>
         <!--if card is in users decklists and belongs to the user? show all the cards-->
         <div class="item">
