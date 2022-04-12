@@ -53,3 +53,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'scryfall'
 
 gem 'fuzzy_match', '~> 2.1'
+
+gem 'cloudinary'

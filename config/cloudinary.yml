@@ -1,0 +1,19 @@
+23---
+development:
+  cloud_name: dfovjd17t
+  api_key: '646674315969583'
+  api_secret: u0PJuDJVhjs0j5ZjZe95UPQImGk
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dfovjd17t
+  api_key: '646674315969583'
+  api_secret: u0PJuDJVhjs0j5ZjZe95UPQImGk
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dfovjd17t
+  api_key: '646674315969583'
+  api_secret: u0PJuDJVhjs0j5ZjZe95UPQImGk
+  enhance_image_tag: true
+  static_file_support: false
