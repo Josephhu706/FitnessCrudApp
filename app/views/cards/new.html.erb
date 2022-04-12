@@ -1,17 +1,18 @@
 <h1>Find A New Card</h1>
     <form action="/search">  
-    <label>
-        Search Parameter:
-        <select name="search_parameter">
-            <option value="name">Search by Name</option>
-            <option value="color">Search by Color</option>
-            <option value="type">Search by Type</option>
-        </select>
-    </label> 
-
-     <label>
-         Enter Card:
-        <input type = "text" name="card" placeholder="MSFT" required>
-     </label>
-     <button>Find Card</button>
-     </form>
+        <div class="form-group">
+            <label>
+                Search Parameter:
+                <select name="search_parameter" class="form-control">
+                    <option value="name">Search by Name</option>
+                    <option value="color">Search by Color</option>
+                    <option value="type">Search by Type</option>
+                </select>
+            </label>
+            <label>
+                Enter Card:
+                <input type = "text" name="card" placeholder="Ponder" required>
+            </label>
+        </div>
+        <button>Find Card</button>
+    </form>

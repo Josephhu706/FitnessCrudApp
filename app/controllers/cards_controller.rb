@@ -10,10 +10,14 @@ class CardsController < ApplicationController
 
   def create
     card= Card.create card_params
+    decklist = Decklist.find params[:card][:decklist_ids]
+
+    decklist.cards << card
     redirect_to card
   end
 
   def searchresult
+      @decklists = @current_user.decklists
       @number = 0
     if params[:search_parameter] == "name"
       @number = 1
@@ -41,6 +45,7 @@ class CardsController < ApplicationController
   def destroy
     card = Card.find params[:id]
     card.destroy
+    redirect_to cards_path
   end
 
   private

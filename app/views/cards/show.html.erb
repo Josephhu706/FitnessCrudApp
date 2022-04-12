@@ -1,13 +1,17 @@
-<h1><%=@card.title%></h1>
 
-<%= image_tag @card.image, :class => 'feature' %>
-<ul>
-    <li>Price: $<%=@card.price%> USD</li>
-    <li>Release Date: <%=@card.release%></li>
-    <li>Card Rarity: <%=@card.rarity%></li>
-    <li>Oracle Text: <%=@card.oracle%></li>
-</ul>
+    <div class="card">
+        <div class="card-horizontal">
+            <div class="img-square-wrapper">
+                <%= image_tag @card.image, :class =>'card-img' %>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><%=@card.title%></h5>
+                <h5 class="card-title">Price: $<%=@card.price%> USD</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Release Date: <%=@card.release%></h6>
+                <h6 class="card-subtitle mb-2 text-muted">Card Rarity: <%=@card.rarity%></h6>
+                <p class="card-text">Oracle Text: <%=@card.oracle%></p>
+                <%= link_to 'Delete card from Library', @card, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class =>"btn btn-primary"%>
+            </div>
+        </div>
+    </div>
 
-<div class="controls">
-    <%= link_to 'Delete card from Library', @card, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
-</div>

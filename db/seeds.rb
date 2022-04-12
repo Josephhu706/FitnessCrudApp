@@ -21,23 +21,27 @@ c12 = Card.create :title => 'Admonition Angel', :price => '16.02', :rarity => "m
 puts "#{Card.count} cards"
 
 Decklist.destroy_all
-d1 = Decklist.create :name => 'Breya Artifact'
-d2 = Decklist.create :name => 'Sahlili Artifact'
-d3 = Decklist.create :name => 'Atraxa'
-d4 = Decklist.create :name => 'One Punch Angel'
+d1 = Decklist.create :name => 'Breya Artifact' , :description =>'Standard Artifact Red Blue Deck', :cover=>"https://legendary-digital-network-assets.s3.amazonaws.com/geekandsundry/wp-content/uploads/2018/06/Goblin-Haberdasher-Unstable-MtG-Art.jpg"
+d2 = Decklist.create :name => 'Sahlili Artifact', :description =>'Commander Artifact Competition Deck', :cover=>"https://media.wizards.com/images/magic/daily/ur/ur259_goblingrenade.jpg"
+d3 = Decklist.create :name => 'Atraxa', :description =>'Green Deck to piss people off', :cover=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvI_eKI5AmRAX1VzDiFSr8kiY2h-X0HJxF1A&usqp=CAU"
+d4 = Decklist.create :name => 'One Punch Angel', :description =>'Double Damage Red White Deck', :cover=>"https://media.magic.wizards.com/images/hero/38kuy5vb2c_768_icon.jpg"
 
 puts "#{Decklist.count} decklists"
-u1.cards << c1 
-u2.cards << c12 
+
+# puts "Users and Cards"
+
+# u1.own_cards << c12
+# u2.own_cards << c1
+
 puts "Decklists and Cards"
 
-d1.cards << c7 << c8 << c9
-d2.cards << c10 << c11 << c12
-d3.cards << c1 << c2<< c3
-d4.cards << c4 << c5 << c6 
+d1.cards << c1 << c2 << c3 
+d2.cards << c4 << c5 << c6
+d3.cards << c7 << c8 << c9
+d4.cards << c10 << c11 << c12
 
 puts "Decklists and Users"
 
-u1.decklists << d1 << d2
-u2.decklists << d3 << d4
+u1.decklists << d2 << d4
+u2.decklists << d1 << d3
 

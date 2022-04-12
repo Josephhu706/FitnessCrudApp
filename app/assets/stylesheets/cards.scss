@@ -1,3 +1,47 @@
-// Place all the styles related to the Cards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+    
+}
+.card{
+   max-width: 700px;
+   margin: 0 auto;
+   margin-top: 5%;
+   border-radius: 20px;
+}
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+.card-body{
+    max-width: 50%;
+}
+.card-img{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+    display:grid;
+    grid-gap:20px 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.index-thumbnail{
+    max-height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 1em;
+}
+.search-container{
+    border: 1px solid green;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.result-card{
+    border:1px solid blue;
+}
+

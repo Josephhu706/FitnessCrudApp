@@ -1,11 +1,18 @@
 <!--this is a partial, it starts with an underscore-->
 
     <%= form_for @decklist do |f|%>
-    <%=f.collection_check_boxes(:card_ids, @current_user.cards, :id, :title)%>
+    <%=f.collection_check_boxes(:card_ids, @current_user.cards.uniq, :id, :title)%>
+    <!--i want current users cards where -->
     <%= f.label :name %>
     <%= f.text_field :name %>
 
     <%= f.label :cover %>
     <%=f.text_field :cover %>
+
+    <%= f.label :description %>
+    <%=f.text_field :description %>
+    
     <%=f.submit%>
 <%end%>
+
+<!--keeps making copies of cards every time i edit-->

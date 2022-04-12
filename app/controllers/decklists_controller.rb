@@ -7,12 +7,19 @@ class DecklistsController < ApplicationController
     @decklist = Decklist.new
   end
 
+  def create
+    decklist = Decklist.create decklist_params
+    redirect_to decklist
+  end
+
   def edit
     @decklist = Decklist.find params[:id]
+    @decklist.user_id = @current_user.id
   end
 
   def update
     decklist = Decklist.find params[:id]
+    decklist.user_id = @current_user.id
     decklist.update decklist_params
     redirect_to decklist
   end
@@ -29,6 +36,6 @@ class DecklistsController < ApplicationController
 
   private
   def decklist_params #strong params
-    params.require(:decklist).permit(:name, :cover, :card_ids => []) #asks for params without getting directly from params object
+    params.require(:decklist).permit(:name, :cover, :description, :card_ids => []) #asks for params without getting directly from params object
   end
 end
