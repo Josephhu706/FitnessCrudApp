@@ -5,7 +5,7 @@
     <%if decklist.user_id == @current_user.id%>
 <!--if decklist.user_id == @current_user.id-->
         <div class="card" style="width: 18rem;">
-        <%= image_tag decklist.cover, :class => 'cover-art' if decklist.cover.present? %>
+        <%= cl_image_tag decklist.cover, :class => 'cover-art' if decklist.cover.present? %>
         <div class="card-body">
             <h5 class="card-title"><%=decklist.name%></h5>
             <p class="card-text"><%=decklist.description%></p>

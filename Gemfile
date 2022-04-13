@@ -55,3 +55,9 @@ gem 'scryfall'
 gem 'fuzzy_match', '~> 2.1'
 
 gem 'cloudinary'
+
+gem 'jquery-rails'
+
+gem 'bootstrap', '~> 5.1.3'
+
+gem 'youtube_addy', '~> 1.0', '>= 1.0.4'

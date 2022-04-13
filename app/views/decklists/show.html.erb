@@ -1,15 +1,71 @@
 <h1>Cards in <%=@decklist.name%> Deck</h1>
-    <%= cl_image_tag(@decklist.cover)%>
-<ul>
-    <%@decklist.cards.each do |card|%>
-    <li><%=card.title%></li>
-    <!--find cards in join table that have same id as decklist-->
-    <%end%>
-</ul>
 
-    <div class="controls">
-        <%= link_to "Edit Decklist", edit_decklist_path(@decklist.id) %> <!--need to be specific because we are using @artist-->
-        <%= link_to "Delete Decklist", @decklist, :method => 'delete', :data => {:confirm => 'Are you sure?'} %> 
+
+<div class="container deck">
+    <div class="row">
+        <div class="creatures col deck-column">
+            <h4>(<%=@creatureArray.length%>)Creatures</h4>
+            <ul>
+                <%@creatureArray.each do |card|%>
+                   <li><%=link_to card.title, card%></li>
+                <%end%>
+            </ul>
+        </div>
+        <div class="land col deck-column">
+            <h4>(<%=@landArray.length%>)Lands</h4>
+            <ul>
+                <%@landArray.each do |card|%>
+                    <li><%=link_to card.title, card%></li>
+                <%end%>
+            </ul>
+        </div>
+        <div class="artifacts col deck-column">
+            <h4>(<%=@artifactArray.length%>)Artifacts</h4>
+            <ul>
+                <%@artifactArray.each do |card|%>
+                   <li><%=link_to card.title, card%></li>
+                <%end%>
+            </ul>
+        </div>
+
+        <div class="enchantments col deck-column">
+        <h4>(<%=@enchantmentArray.length%>)Enchantments</h4>
+            <ul>
+                <%@enchantmentArray.each do |card|%>
+                    <%=link_to card.title, card%>
+                <%end%>
+            </ul>
+        </div>
+        <div class="planeswalkers col deck-column">
+        <h4>(<%=@planeswalkerArray.length%>)Planeswalkers</h4>
+            <ul>
+                <%@planeswalkerArray.each do |card|%>
+                    <li><%=link_to card.title, card%></li>
+                <%end%>
+            </ul>
+        </div>
+        <div class="instants col deck-column">
+        <h4>(<%=@instantArray.length%>)Instants</h4>
+        <ul>
+            <%@instantArray.each do |card|%>
+                <li><%=link_to card.title, card%></li>
+            <%end%>
+        </ul>
+        </div>
+        <div class="sorcerys col deck-column">
+        <h4>(<%=@sorceryArray.length%>)Sorcerys</h4>
+        <ul>
+            <%@sorceryArray.each do |card|%>
+                <li><%=link_to card.title, card%></li>
+            <%end%>
+        </ul>
+        </div>
     </div>
+</div>
+
+<div class="controls">
+    <%= link_to "Edit Decklist", edit_decklist_path(@decklist.id), :class=>"btn btn-outline-success",:type=>"button" %> <!--need to be specific because we are using @artist-->
+    <%= link_to "Delete Decklist", @decklist, :method => 'delete', :data => {:confirm => 'Are you sure?'},:class=>"btn btn-outline-danger",:type=>"button" %> 
+</div>
 
     

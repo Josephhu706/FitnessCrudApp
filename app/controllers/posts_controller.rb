@@ -1,0 +1,19 @@
+class PostsController < ApplicationController
+
+  def new
+    @post = Post.new
+  end
+  
+  def create
+    post = Post.new post_params
+    post.user_id = @current_user.id
+    post.update_attributes(post_params)
+    post.save
+    redirect_to root_path
+  end
+
+  private
+  def post_params #strong params
+    params.require(:post).permit(:title, :post_text, :image, :video) #asks for params without getting directly from params object
+  end
+end

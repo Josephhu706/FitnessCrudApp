@@ -1,18 +1,54 @@
 <!--this is a partial, it starts with an underscore-->
-
+<div class="container">
     <%= form_for(@decklist, :html=>{:multipart => true}) do |f|%>
-    <%=f.collection_check_boxes(:card_ids, @current_user.cards.uniq, :id, :title)%>
-    <!--i want current users cards where -->
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+        <div class="row form-inputs">
+            <div class="col deck-name">
+                <%= f.label :name %>
+                <%= f.text_field :name, :class=>"form-control form-input" %>
+            </div>
+            <div class="col">
+                <%= f.label :cover %>
+                <%=f.cl_image_upload :cover, :class=>"form-control", :type=>"file"%>
+            </div>
+            <div class="col-6 deck-description">
+                <%= f.label :description %>
+                <%=f.text_field :description, :class=>"form-control form-input" %>
+            </div>
+        </div>
 
-    <%= f.label :cover %>
-    <%=f.cl_image_upload :cover %>
-
-    <%= f.label :description %>
-    <%=f.text_field :description %>
-    
-    <%=f.submit%>
-<%end%>
-
+        <div class="row">
+            <div class="edit-column col">
+                <h4>(<%=@creatureArray.length%>)Creatures</h4>
+                <div class="checkboxes">
+                    <%=f.collection_check_boxes :card_ids, @creatureArray, :id, :title%>
+                </div>
+            </div>
+            <div class="edit-column col">
+                <h4>(<%=@landArray.length%>)Lands</h4>
+                <%=f.collection_check_boxes :card_ids, @landArray, :id, :title%>
+            </div>
+                <div class="edit-column col">
+                <h4>(<%=@artifactArray.length%>)Artifacts</h4>
+                <%=f.collection_check_boxes :card_ids, @artifactArray, :id, :title%>
+            </div>
+            <div class="edit-column col">
+                <h4>(<%=@enchantmentArray.length%>)Enchantments</h4>
+                <%=f.collection_check_boxes :card_ids, @enchantmentArray, :id, :title%>
+            </div>
+            <div class="edit-column col">
+                <h4>(<%=@planeswalkerArray.length%>)Planeswalkers</h4>
+                <%=f.collection_check_boxes :card_ids, @planeswalkerArray, :id, :title%>
+            </div>
+                <div class="edit-column col">
+                <h4>(<%=@instantArray.length%>)Instants</h4>
+                <%=f.collection_check_boxes :card_ids, @instantArray, :id, :title%>
+            </div>
+            <div class="edit-column col">
+                <h4>(<%=@sorceryArray.length%>)Sorcerys</h4>
+                <%=f.collection_check_boxes :card_ids, @sorceryArray, :id, :title %>
+            </div>
+        </div>
+        <%=f.submit :class=>"btn btn-primary"%>   
+    <%end%>     
+</div>
 <!--keeps making copies of cards every time i edit-->

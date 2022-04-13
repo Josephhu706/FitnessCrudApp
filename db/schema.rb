@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_12_015204) do
+ActiveRecord::Schema.define(version: 2022_04_13_121348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2022_04_12_015204) do
     t.text "release"
     t.text "rarity"
     t.text "oracle"
-    t.integer "user_id"
+    t.text "card_type"
   end
 
   create_table "cards_decklists", id: false, force: :cascade do |t|
@@ -39,6 +39,16 @@ ActiveRecord::Schema.define(version: 2022_04_12_015204) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.text "title"
+    t.text "post_text"
+    t.text "image"
+    t.text "video"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

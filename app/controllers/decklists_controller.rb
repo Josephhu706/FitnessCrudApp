@@ -5,10 +5,13 @@ class DecklistsController < ApplicationController
 
   def show
     @decklist = Decklist.find params[:id]
+    sortCards(@decklist.cards)
   end
 
   def new
     @decklist = Decklist.new
+    @decklist.user_id = @current_user.id
+    sortCards(@current_user.cards.uniq)
   end
 
   def create
@@ -26,6 +29,7 @@ class DecklistsController < ApplicationController
   def edit
     @decklist = Decklist.find params[:id]
     @decklist.user_id = @current_user.id
+    sortCards(@current_user.cards.uniq)
   end
 
   def update
@@ -44,6 +48,33 @@ class DecklistsController < ApplicationController
     decklist = Decklist.find params[:id]
     decklist.destroy
     redirect_to decklists_path
+  end
+
+  def sortCards (cardlist)
+    @creatureArray=[]
+    @landArray=[]
+    @artifactArray=[]
+    @enchantmentArray=[]
+    @planeswalkerArray=[]
+    @instantArray=[]
+    @sorceryArray=[]
+    cardlist.each do |card|
+      if card.card_type.include? "Creature"
+          @creatureArray.push(card)
+      elsif card.card_type.include? "Land"
+          @landArray.push(card)
+      elsif card.card_type.include? "Artifact"
+          @artifactArray.push(card)
+      elsif card.card_type.include? "Enchantment"
+          @enchantmentArray.push(card)
+      elsif card.card_type.include? "Planeswalker"
+          @planeswalkerArray.push(card)
+      elsif card.card_type.include? "Instant"
+          @instantArray.push(card)
+      elsif card.card_type.include? "Sorcery"
+          @instantArray.push(card)
+      end
+    end
   end
 
   private

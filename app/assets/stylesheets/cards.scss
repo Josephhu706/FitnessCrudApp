@@ -25,9 +25,7 @@ h1{
     margin: 0 auto;
 }
 .blockquote-footer{
-
     padding-top: 2em;
-
 }
 .search-form{
     margin-bottom: 5%;
@@ -58,11 +56,7 @@ h1{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 1em;
 }
-.search-container{
-    border: 1px solid green;
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}  
+
 .search-parameters{
     border: 1px solid blue;
 }
@@ -75,9 +69,6 @@ h1{
     grid-template-columns: 20% 20% 10%;
     justify-content: center;
     align-items: center;
-}
-.result-card{
-    border:1px solid blue;
 }
 
 .search_select_box{
@@ -92,4 +83,26 @@ h1{
     padding: 15px 25px;
     color: #fff !important;
     font-size: 20px;
+}
+
+.card-deck{
+    max-width: 1200px;
+    margin: 0 auto;
+    // border: 1px solid green;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap:20px;
+    margin-bottom: 2%;
+}
+.card-body{
+    font-size: 15px;
+}
+.card-img-top{
+    border-radius: 1em;
+}
+.result-select{
+    // border: 1px solid red;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
 }

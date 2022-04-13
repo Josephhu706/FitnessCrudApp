@@ -24,6 +24,7 @@
                    
           <li class="navitem"><%=link_to "Cards", cards_path, class:"nav-link"%></li>
           <li class="navitem"><%=link_to "New Card", new_card_path, class:"nav-link"%></li>
+          <li class="navitem"><%=link_to "New Post", new_post_path, class:"nav-link"%></li>
           <li class="navitem"><%=link_to "Decklists", decklists_path, class:"nav-link"%></li>
           <li class="navitem"><%=link_to "New Decklist", new_decklist_path, class:"nav-link"%></li>
           <li class="navitem"><%=link_to "sign out-#{@current_user.email}", login_path, :method=>'delete', class:"nav-link"%></li>
