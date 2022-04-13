@@ -45,3 +45,4 @@ puts "Decklists and Users"
 u1.decklists << d2 << d4
 u2.decklists << d1 << d3
 
+Post.destroy_all

@@ -1,36 +1,37 @@
 <h1>MTG</h1>
 
 <%if @current_user.present? %>
-<h2>Welcome Back<%=@current_user.email%>!</h2><!-- if someone is logged in before use initiate the action, we welcome them back, otherwise skip the line-->
-<%end%>
+    <h2>Welcome Back<%=@current_user.email%>!</h2><!-- if someone is logged in before use initiate the action, we welcome them back, otherwise skip the line-->
 
-<%@posts.reverse_each do |post|%>
 
-    <div class="individual-post-container">
-        <h2>
-            <%=post.title%>
-        </h2>
+    <%@posts.reverse_each do |post|%>
+        <div class="individual-post-container">
 
-        <% if post.post_text.present? %>
-            <h5> <%= post.post_text %> </h5>
-        <% end %>
-        <% if post.image.present? %>
-            <%=image_tag post.image, :class=> 'post-image'%>  
-        <%end%>
-        <% if post.video.present? %>
-        <div>
-            <%=raw YouTubeAddy.youtube_embed_url(post.video,560,315) %>
-        </div> 
-        <% end %>
+            <h2>
+                <%=post.title%>
+            </h2>
 
-        <div class="posted-by-container">
-            <%user=User.find post.user_id%>
+
+            <% if post.post_text.present? %>
+                <h5> <%= post.post_text %> </h5>
+            <% end %>
+            <% if post.image.present? %>
+                <%=image_tag post.image, :class=> 'post-image'%>  
+            <%end%>
+            <% if post.video.present? %>
+                <div>
+                    <%video=YouTubeAddy.extract_video_id(post.video)%>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=video%>" allowfullscreen></iframe>
+                </div> 
+            <% end %>
+            <div class="posted-by-container">
+                <%user=User.find post.user_id%>
                 <h4>Posted by <%=user.email%></h4>
                 <h4> 
                     <% time = (post.created_at).strftime("%d %B %Y at %I:%M%P")%> 
                     <%= time %>
                 </h4>
+            </div>  
         </div>
-    </div>
-    
+    <%end%>
 <%end%>
