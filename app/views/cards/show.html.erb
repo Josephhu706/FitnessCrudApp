@@ -7,7 +7,7 @@
             <div class="card-body card-show">
                 <h4 class="card-title card-title"><%=@card.title%></h4>
                 <h5 class="card-title card-price">Price: $<%=@card.price%> USD</h5>
-                <h6 class="card-subtitle mb-2 card-release">Release Date: <%=@card.release%></h6>
+                <h6 class="card-subtitle mb-2 card-release">Release Date: <%=@card.release.to_date.strftime'%A %B %e, %Y'unless @card.release.nil?%></h6>
                 <h6 class="card-subtitle mb-2 card-rarity">Card Rarity: <%=@card.rarity%></h6>
                 <p class="card-text"><strong>Oracle Text:</strong> <%=@card.oracle%></p>
                 <%= link_to 'Delete card from Library', @card, :method => 'delete', :data => {:confirm => 'Are you sure?'}, :class =>"btn btn-outline-danger"%>

@@ -43,6 +43,12 @@
                         <% time = (post.created_at).strftime("%d %B %Y at %I:%M%P")%> 
                         <%= time %>
                     </h6>
+                    <%if post.user_id == @current_user.id%>
+                        <div class="controls">
+                            <%= link_to "Edit Post", edit_post_path(post.id), :class=>"btn btn-secondary deck-button",:type=>"button" %> <!--need to be specific because we are using @artist-->
+                            <%= link_to "Delete Post", post, :method => 'delete', :data => {:confirm => 'Are you sure?'},:class=>"btn btn-danger delete-deck deck-button ",:type=>"button" %> 
+                        </div>
+                    <%end%>
                 </div>  
             </div>
         <%end%>

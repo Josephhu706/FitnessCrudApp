@@ -3,7 +3,7 @@
 <div class="container deck-index">
     <%@decklists.each do |decklist|%>
         <%if decklist.user_id == @current_user.id%>
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 25rem;">
                 <%= cl_image_tag decklist.cover, :class => 'cover-art' if decklist.cover.present? %>
                 <div class="card-body">
                     <h5 class="card-title"><%=decklist.name%></h5>
