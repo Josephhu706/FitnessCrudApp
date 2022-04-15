@@ -1,4 +1,12 @@
-<h1>Cards in <%=@decklist.name%> Deck</h1>
+<h1><%=@decklist.name%> Deck</h1>
+
+<h5 class="decklist-description-show"><%=@decklist.description%></h5>
+
+<div class="controls">
+    <%= link_to "Edit Deck", edit_decklist_path(@decklist.id), :class=>"btn btn-secondary deck-button",:type=>"button" %> <!--need to be specific because we are using @artist-->
+    <%= link_to "Delete Deck", @decklist, :method => 'delete', :data => {:confirm => 'Are you sure?'},:class=>"btn btn-danger delete-deck deck-button ",:type=>"button" %> 
+</div>
+
 
 
 <div class="container deck">
@@ -7,7 +15,7 @@
             <h4>(<%=@creatureArray.length%>)Creatures</h4>
             <ul>
                 <%@creatureArray.each do |card|%>
-                   <li><%=link_to card.title, card%></li>
+                   <li class="deck-links"><%=link_to card.title, card%></li>
                 <%end%>
             </ul>
         </div>
@@ -23,7 +31,7 @@
             <h4>(<%=@artifactArray.length%>)Artifacts</h4>
             <ul>
                 <%@artifactArray.each do |card|%>
-                   <li><%=link_to card.title, card%></li>
+                   <li class="deck-links"><%=link_to card.title, card%></li>
                 <%end%>
             </ul>
         </div>
@@ -40,7 +48,7 @@
         <h4>(<%=@planeswalkerArray.length%>)Planeswalkers</h4>
             <ul>
                 <%@planeswalkerArray.each do |card|%>
-                    <li><%=link_to card.title, card%></li>
+                    <li class="deck-links"><%=link_to card.title, card%></li>
                 <%end%>
             </ul>
         </div>
@@ -48,7 +56,7 @@
         <h4>(<%=@instantArray.length%>)Instants</h4>
         <ul>
             <%@instantArray.each do |card|%>
-                <li><%=link_to card.title, card%></li>
+                <li class="deck-links"><%=link_to card.title, card%></li>
             <%end%>
         </ul>
         </div>
@@ -56,16 +64,12 @@
         <h4>(<%=@sorceryArray.length%>)Sorcerys</h4>
         <ul>
             <%@sorceryArray.each do |card|%>
-                <li><%=link_to card.title, card%></li>
+                <li class="deck-links"><%=link_to card.title, card%></li>
             <%end%>
         </ul>
         </div>
     </div>
 </div>
 
-<div class="controls">
-    <%= link_to "Edit Decklist", edit_decklist_path(@decklist.id), :class=>"btn btn-outline-success",:type=>"button" %> <!--need to be specific because we are using @artist-->
-    <%= link_to "Delete Decklist", @decklist, :method => 'delete', :data => {:confirm => 'Are you sure?'},:class=>"btn btn-outline-danger",:type=>"button" %> 
-</div>
 
     

@@ -1,5 +1,10 @@
+html, body {
+height: 100%;
+}
 body{
-    background-color: #eee;
+    
+    background: url('background2.jpg') no-repeat center center fixed; 
+    background-size: cover;
 }
 .wrapper{
     margin: 80px;

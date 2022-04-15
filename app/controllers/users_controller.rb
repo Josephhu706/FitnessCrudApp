@@ -13,6 +13,7 @@ class UsersController < ApplicationController
     @user = User.new user_params 
     if @user.save 
       session[:user_id] = @user.id
+      flash[:message] = "Thank you for signing up!"
       redirect_to root_path #we can redirect to anywhere, not necessarily the root_path
     else
       render :new #we put user in an instance variable @user because the form requires an @user. Show the form again so they can try again.

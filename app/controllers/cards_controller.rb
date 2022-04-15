@@ -16,6 +16,8 @@ class CardsController < ApplicationController
   end
 
   def searchresult
+      @searchparams = params[:search_parameter]
+      @searchtext = params[:card]
       @decklists = @current_user.decklists
       @number = 0
     if params[:search_parameter] == "name"
@@ -39,6 +41,8 @@ class CardsController < ApplicationController
 
   def show
     @card = Card.find params[:id]
+    decklistids = @card.decklist_ids
+    @decklists = Decklist.find decklistids
   end
 
   def destroy

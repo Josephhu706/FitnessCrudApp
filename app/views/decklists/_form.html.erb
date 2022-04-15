@@ -1,54 +1,68 @@
 <!--this is a partial, it starts with an underscore-->
-<div class="container">
+<div class="container edit-deck-container">
     <%= form_for(@decklist, :html=>{:multipart => true}) do |f|%>
         <div class="row form-inputs">
             <div class="col deck-name">
                 <%= f.label :name %>
-                <%= f.text_field :name, :class=>"form-control form-input" %>
+                <%= f.text_field :name, :class=>"form-control form-input", :placeholder=>"Deck name..." %>
             </div>
-            <div class="col">
+            <div class="col deck-cover">
                 <%= f.label :cover %>
                 <%=f.cl_image_upload :cover, :class=>"form-control", :type=>"file"%>
             </div>
             <div class="col-6 deck-description">
                 <%= f.label :description %>
-                <%=f.text_field :description, :class=>"form-control form-input" %>
+                <%=f.text_field :description, :class=>"form-control form-input", :placeholder=>"Deck description..."%>
             </div>
         </div>
 
         <div class="row">
             <div class="edit-column col">
-                <h4>(<%=@creatureArray.length%>)Creatures</h4>
+                <h5>Creatures (<%=@creatureArray.length%>)</h5>
                 <div class="checkboxes">
-                    <%=f.collection_check_boxes :card_ids, @creatureArray, :id, :title%>
+                    <%=f.collection_check_boxes(:card_ids, @creatureArray, :id, :title) do |b|%>
+                        <%= b.label(class:"label-checkbox") { b.check_box+" "+b.text } %>
+                    <%end%>
                 </div>
             </div>
             <div class="edit-column col">
-                <h4>(<%=@landArray.length%>)Lands</h4>
-                <%=f.collection_check_boxes :card_ids, @landArray, :id, :title%>
+                <h5>Lands (<%=@landArray.length%>)</h5>
+                <%=f.collection_check_boxes(:card_ids, @landArray, :id, :title) do |b|%>
+                    <%= b.label(class:"label-checkbox") { b.check_box +" "+b.text } %>
+                <%end%>
             </div>
                 <div class="edit-column col">
-                <h4>(<%=@artifactArray.length%>)Artifacts</h4>
-                <%=f.collection_check_boxes :card_ids, @artifactArray, :id, :title%>
+                <h5>Artifacts (<%=@artifactArray.length%>)</h5>
+                <%=f.collection_check_boxes(:card_ids, @artifactArray, :id, :title) do |b|%>
+                    <%= b.label(class:"label-checkbox") { b.check_box+" "+b.text } %>
+                <%end%>
             </div>
             <div class="edit-column col">
-                <h4>(<%=@enchantmentArray.length%>)Enchantments</h4>
-                <%=f.collection_check_boxes :card_ids, @enchantmentArray, :id, :title%>
+                <h5>Enchantments (<%=@enchantmentArray.length%>)</h5>
+                <%=f.collection_check_boxes(:card_ids, @enchantmentArray, :id, :title) do |b|%>
+                    <%= b.label(class:"label-checkbox") { b.check_box+" "+b.text } %>
+                <%end%>
             </div>
             <div class="edit-column col">
-                <h4>(<%=@planeswalkerArray.length%>)Planeswalkers</h4>
-                <%=f.collection_check_boxes :card_ids, @planeswalkerArray, :id, :title%>
+                <h5>Planeswalkers (<%=@planeswalkerArray.length%>)</h5>
+                <%=f.collection_check_boxes(:card_ids, @planeswalkerArray, :id, :title) do |b|%>
+                    <%= b.label(class:"label-checkbox") { b.check_box+" "+b.text } %>
+                <%end%>
             </div>
                 <div class="edit-column col">
-                <h4>(<%=@instantArray.length%>)Instants</h4>
-                <%=f.collection_check_boxes :card_ids, @instantArray, :id, :title%>
-            </div>
+                <h5>Instants (<%=@instantArray.length%>)</h5>
+                <%=f.collection_check_boxes(:card_ids, @instantArray, :id, :title) do |b|%>
+                    <%= b.label(class:"label-checkbox") { b.check_box+" "+b.text } %>
+                <%end%>
+           </div>
             <div class="edit-column col">
-                <h4>(<%=@sorceryArray.length%>)Sorcerys</h4>
-                <%=f.collection_check_boxes :card_ids, @sorceryArray, :id, :title %>
+                <h5>Sorceries (<%=@sorceryArray.length%>)</h5>
+                <%=f.collection_check_boxes(:card_ids, @sorceryArray, :id, :title) do |b| %>
+                    <%= b.label(class:"label-checkbox") { b.check_box+" "+b.text } %>
+                <%end%>
             </div>
         </div>
-        <%=f.submit :class=>"btn btn-primary"%>   
+        <%=f.submit :class=>"btn btn-primary create-deck"%>   
     <%end%>     
 </div>
 <!--keeps making copies of cards every time i edit-->

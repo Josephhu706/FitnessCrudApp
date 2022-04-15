@@ -58,6 +58,6 @@ gem 'cloudinary'
 
 gem 'jquery-rails'
 
-gem 'bootstrap', '~> 5.1.3'
+gem 'bootstrap'
 
 gem 'youtube_addy', '~> 1.0', '>= 1.0.4'

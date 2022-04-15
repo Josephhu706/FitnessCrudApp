@@ -72,7 +72,7 @@ class DecklistsController < ApplicationController
       elsif card.card_type.include? "Instant"
           @instantArray.push(card)
       elsif card.card_type.include? "Sorcery"
-          @instantArray.push(card)
+          @sorceryArray.push(card)
       end
     end
   end

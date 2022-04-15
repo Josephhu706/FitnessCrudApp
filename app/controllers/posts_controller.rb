@@ -7,6 +7,10 @@ class PostsController < ApplicationController
   def create
     post = Post.new post_params
     post.user_id = @current_user.id
+    if params[:file].present?
+      req=Cloudinary::Uploader.upload(params[:file])
+      post.image = req["public_id"]
+    end
     post.update_attributes(post_params)
     post.save
     redirect_to root_path

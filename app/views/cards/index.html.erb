@@ -1,10 +1,11 @@
-<h1><%=@current_user.email%>'s Card Library</h1>
+<h1>My Card Library</h1>
 <div class="cards-container">
         <%@current_user.cards.uniq.each do |card|%>
         <!--if card is in users decklists and belongs to the user? show all the cards-->
         <div class="item">
-                <h6>name: <%=link_to card.title, card%></h6>
+        
                 <%= link_to image_tag(card.image, :class => 'index-thumbnail'), card %>
+                <h6><%=link_to card.title, card%></h6>
         </div>
         <% end %>
 </div>
