@@ -23,7 +23,7 @@
            <h5>Lands (<%=@landArray.length%>)</h5>
             <ul>
                 <%@landArray.each do |card|%>
-                    <li><%=link_to card.title, card%></li>
+                <li class="deck-links"><li><%=link_to card.title, card%></li>
                 <%end%>
             </ul>
         </div>
@@ -40,7 +40,7 @@
        <h5>Enchantments (<%=@enchantmentArray.length%>)</h5>
             <ul>
                 <%@enchantmentArray.each do |card|%>
-                    <%=link_to card.title, card%>
+                <li class="deck-links"><%=link_to card.title, card%></li>
                 <%end%>
             </ul>
         </div>
