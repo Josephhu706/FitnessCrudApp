@@ -23,7 +23,7 @@
            <h5>Lands (<%=@landArray.length%>)</h5>
             <ul>
                 <%@landArray.each do |card|%>
-                <li class="deck-links"><li><%=link_to card.title, card%></li>
+                <li class="deck-links"><%=link_to card.title, card%></li>
                 <%end%>
             </ul>
         </div>
