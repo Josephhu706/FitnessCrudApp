@@ -1,6 +1,6 @@
 .posts-new{
     margin: 0 auto;
-    border: 1px solid red;
+
     justify-content: center;
     text-align: center;
     max-width: 960px;
@@ -19,4 +19,80 @@
 
 .post-wrapper{
     padding-bottom: 3%;
+}
+p{
+    font-family: 'Petrona', serif;
+    font-weight: 300;
+}
+h1{
+    font-family: 'Rakkas', cursive;
+}
+h2{
+    font-family: 'Rakkas', cursive;
+}
+h3{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+}
+
+h4{
+    font-family: 'Rakkas', cursive;
+}
+h5{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+}
+h6{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+}
+label{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+
+}
+.card-header{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+}
+.blockquote-footer{
+    font-family: 'Petrona', serif;
+    font-style: italic;
+    color: #966D2C;
+}
+
+.form-select{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+}
+.form-input{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+}
+
+.btn{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+}
+
+.form-control{
+    font-family: 'Petrona', serif;
+    font-weight: 300;
+}
+.sr-only{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+ 
+}
+.navitem{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
+    color:#E1D07B;
+}
+.navbar-brand{
+    font-family: 'Rakkas', cursive;
+}
+.deck-column a{
+    font-family: 'Petrona', serif;
+    font-weight: 600;
 }

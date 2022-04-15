@@ -12,7 +12,7 @@
 <div class="container deck">
     <div class="row">
         <div class="creatures col deck-column">
-            <h4>(<%=@creatureArray.length%>)Creatures</h4>
+           <h5>Creatures (<%=@creatureArray.length%>)</h4>
             <ul>
                 <%@creatureArray.each do |card|%>
                    <li class="deck-links"><%=link_to card.title, card%></li>
@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="land col deck-column">
-            <h4>(<%=@landArray.length%>)Lands</h4>
+           <h5>Lands (<%=@landArray.length%>)</h5>
             <ul>
                 <%@landArray.each do |card|%>
                     <li><%=link_to card.title, card%></li>
@@ -28,7 +28,7 @@
             </ul>
         </div>
         <div class="artifacts col deck-column">
-            <h4>(<%=@artifactArray.length%>)Artifacts</h4>
+           <h5>Artifacts (<%=@artifactArray.length%>)</h5>
             <ul>
                 <%@artifactArray.each do |card|%>
                    <li class="deck-links"><%=link_to card.title, card%></li>
@@ -37,7 +37,7 @@
         </div>
 
         <div class="enchantments col deck-column">
-        <h4>(<%=@enchantmentArray.length%>)Enchantments</h4>
+       <h5>Enchantments (<%=@enchantmentArray.length%>)</h5>
             <ul>
                 <%@enchantmentArray.each do |card|%>
                     <%=link_to card.title, card%>
@@ -45,7 +45,7 @@
             </ul>
         </div>
         <div class="planeswalkers col deck-column">
-        <h4>(<%=@planeswalkerArray.length%>)Planeswalkers</h4>
+       <h5>Planeswalkers (<%=@planeswalkerArray.length%>)</h5>
             <ul>
                 <%@planeswalkerArray.each do |card|%>
                     <li class="deck-links"><%=link_to card.title, card%></li>
@@ -53,7 +53,7 @@
             </ul>
         </div>
         <div class="instants col deck-column">
-        <h4>(<%=@instantArray.length%>)Instants</h4>
+       <h5>Instants (<%=@instantArray.length%>)</h5>
         <ul>
             <%@instantArray.each do |card|%>
                 <li class="deck-links"><%=link_to card.title, card%></li>
@@ -61,7 +61,7 @@
         </ul>
         </div>
         <div class="sorcerys col deck-column">
-        <h4>(<%=@sorceryArray.length%>)Sorcerys</h4>
+       <h5>Sorceries (<%=@sorceryArray.length%>)</h5>
         <ul>
             <%@sorceryArray.each do |card|%>
                 <li class="deck-links"><%=link_to card.title, card%></li>
