@@ -27,9 +27,11 @@
             </div>
             <div class="edit-column col">
                 <h5>Lands (<%=@landArray.length%>)</h5>
-                <%=f.collection_check_boxes(:card_ids, @landArray, :id, :title) do |b|%>
-                    <%= b.label(class:"label-checkbox") { b.check_box +" "+b.text } %>
-                <%end%>
+                <div class="checkboxes">
+                    <%=f.collection_check_boxes(:card_ids, @landArray, :id, :title) do |b|%>
+                        <%= b.label(class:"label-checkbox") { b.check_box+" "+b.text } %>
+                    <%end%>
+                </div>
             </div>
                 <div class="edit-column col">
                 <h5>Artifacts (<%=@artifactArray.length%>)</h5>
