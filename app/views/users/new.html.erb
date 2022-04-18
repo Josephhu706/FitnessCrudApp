@@ -1,10 +1,13 @@
 <% if @user.errors.any? %>
-    <ol>
-        <% @user.errors.full_messages.each do |msg|%> <!--this writes the error messages for us in @user.errors.full_messages-->
-            <li><%= msg %> </li> <!--sign up error message-->
-        <% end %>
-    </ol>
+
+    <% @user.errors.full_messages.each do |msg|%> 
+        <%flash[:alert] = msg%><!--this writes the error messages for us in @user.errors.full_messages-->
+        <div class="alert alert-danger" role="alert">
+            <h5><%=flash[:alert]%></h5>
+        </div><!--sign up error message-->
+    <% end %>
 <%end%>
+
 <div class="wrapper">
     <%= form_for @user, :html => {:class => "form-signin"} do |f| %>
         <h2 class="form-signin-heading text-center">New User</h2>

@@ -10,7 +10,10 @@ class SessionController < ApplicationController
       flash[:welcome] = "Welcome back #{user.email}!"
       redirect_to root_path
     else
-      redirect_to login_path #redirect them to the form
+      redirect_to login_path
+      flash[:incorrect] = "Your Login Details Are Invalid Please Try Again!"
+       #redirect them to the form
+      
     end
   end
   

@@ -41,7 +41,7 @@
                     <h5>Posted by <%=user.email%></h5>
                     <h6 class='time'> 
                         <% time = (post.created_at).strftime("%d %B %Y at %I:%M%P")%> 
-                        <%= time %>
+                        <%= time+" UTC"%>
                     </h6>
                     <%if post.user_id == @current_user.id%>
                         <div class="controls">

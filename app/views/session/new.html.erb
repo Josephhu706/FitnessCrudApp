@@ -1,3 +1,8 @@
+<%if flash[:incorrect]%>
+    <div class="alert alert-danger" role="alert">
+        <h5><%=flash[:incorrect]%></h5>
+    </div><!--sign up error message-->
+<%end%>
 
 <div class="wrapper">
     <%= form_tag login_path, class:"form-signin" do %> <!--when we sign into the login, redirect to login_path-->
