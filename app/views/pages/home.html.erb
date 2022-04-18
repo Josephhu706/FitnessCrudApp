@@ -24,9 +24,9 @@
                 </h2>
 
                 <% if post.image.present? %>
-                <div class="post-image">
-                    <%=cl_image_tag post.image%> 
-                </div> 
+                    <div class="post-image">
+                        <%=cl_image_tag post.image%> 
+                    </div> 
                 <% elsif post.video.present? %>
                     <div class="container">
                         <%video=YouTubeAddy.extract_video_id(post.video)%>
@@ -43,12 +43,15 @@
                         <% time = (post.created_at).strftime("%d %B %Y at %I:%M%P")%> 
                         <%= time+" UTC"%>
                     </h6>
-                    <%if post.user_id == @current_user.id%>
-                        <div class="controls">
-                            <%= link_to "Edit Post", edit_post_path(post.id), :class=>"btn btn-secondary deck-button",:type=>"button" %> <!--need to be specific because we are using @artist-->
-                            <%= link_to "Delete Post", post, :method => 'delete', :data => {:confirm => 'Are you sure?'},:class=>"btn btn-danger delete-deck deck-button ",:type=>"button" %> 
-                        </div>
-                    <%end%>
+
+                    <%if @current_user.present?%>
+                        <%if post.user_id == @current_user.id %>
+                            <div class="controls">
+                                <%= link_to "Edit Post", edit_post_path(post.id), :class=>"btn btn-secondary deck-button",:type=>"button" %> <!--need to be specific because we are using @artist-->
+                                <%= link_to "Delete Post", post, :method => 'delete', :data => {:confirm => 'Are you sure?'},:class=>"btn btn-danger delete-deck deck-button ",:type=>"button" %> 
+                            </div>
+                        <%end%>
+                    <%end%>   
                 </div>  
             </div>
         <%end%>
