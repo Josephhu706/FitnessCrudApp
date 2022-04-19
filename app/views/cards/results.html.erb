@@ -1,8 +1,11 @@
+<!--show the search parameters-->
 <h1>Search results for "<%=@searchparams%> : <%=@searchtext%>"</h1>
 
+<!--if there are no cards found display NO CARDS FOUND-->
 <%if @info["object"] == "error" || @info["code"] == "not_found"%>
     <h1>NO CARDS FOUND</h1>
 <%else%>
+<!--loop through the scryfall api and display search results in cards-->
     <div class="card-deck">
         <%@info["data"].each do|card|%>
 
@@ -21,7 +24,7 @@
                         <h5>$<%=price%></h6>
 
                 </div>
-   
+<!--hidden form that allows the user to select a deck to put the card in and then creates the card with the params provided by the API-->
                 <footer class=result-select>
                     <%=form_for Card.new do |f|%>
                         <%=f.select "decklist_ids", @decklists.map{|d|[d.name, d.id]},{},:class=>"form-select deck-select"%>

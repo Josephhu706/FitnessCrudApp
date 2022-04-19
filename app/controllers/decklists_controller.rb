@@ -11,12 +11,14 @@ class DecklistsController < ApplicationController
   def new
     @decklist = Decklist.new
     @decklist.user_id = @current_user.id
+    #presents all the cards sorted by card type when creating a new deck
     sortCards(@current_user.cards.uniq)
   end
 
   def create
     decklist = Decklist.new decklist_params
     decklist.user_id = @current_user.id
+    #cloudinary image upload for deck image
     if params[:file].present?
       req=Cloudinary::Uploader.upload(params[:file])
       decklist.cover = req["public_id"]
@@ -35,6 +37,7 @@ class DecklistsController < ApplicationController
   def update
     decklist = Decklist.find params[:id]
     decklist.user_id = @current_user.id
+    #cloudinary image upload for deck cover image
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       decklist.cover = req["public_id"]
@@ -50,6 +53,7 @@ class DecklistsController < ApplicationController
     redirect_to decklists_path
   end
 
+  #method that sorts the cards in a decklist by card type
   def sortCards (cardlist)
     @creatureArray=[]
     @landArray=[]

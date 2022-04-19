@@ -1,9 +1,10 @@
 <h1>My Card Library</h1>
 <div class="cards-container">
+<!--had a problem with different cards being cloned. Shows only cards uniq to each deck-->
         <%@current_user.cards.uniq.each do |card|%>
         <!--if card is in users decklists and belongs to the user? show all the cards-->
         <div class="item">
-        
+        <!--create an image of the card that's a link and the title-->
                 <%= link_to image_tag(card.image, :class => 'index-thumbnail'), card %>
                 <h5><%=link_to card.title, card%></h5>
         </div>

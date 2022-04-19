@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def create
     post = Post.new post_params
     post.user_id = @current_user.id
+    #allows image upload
     if params[:file].present?
       req=Cloudinary::Uploader.upload(params[:file])
       post.image = req["public_id"]

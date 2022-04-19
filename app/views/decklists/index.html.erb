@@ -1,5 +1,5 @@
 <h1>My Decks</h1>
-
+<!--displays all the users decklists in a column with relevant information-->
 <div class="container deck-index">
     <%@decklists.each do |decklist|%>
         <%if decklist.user_id == @current_user.id%>

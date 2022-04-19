@@ -1,4 +1,4 @@
-<!--this is a partial, it starts with an underscore-->
+<!--form allowing input of a name, cover of the deck and a description of the deck-->
 <div class="container edit-deck-container">
     <%= form_for(@decklist, :html=>{:multipart => true}) do |f|%>
         <div class="row form-inputs">
@@ -15,7 +15,7 @@
                 <%=f.text_field :description, :class=>"form-control form-input", :placeholder=>"Deck description..."%>
             </div>
         </div>
-
+<!--Creates a row for each card type and all corresponding cards with the specific card type uses card sorting method in decklists_controller-->
         <div class="row">
 
             <div class="edit-column col">

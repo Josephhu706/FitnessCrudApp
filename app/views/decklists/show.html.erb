@@ -1,5 +1,6 @@
 <h1><%=@decklist.name%> Deck</h1>
 
+<!--provides description of decklist and edit and delete buttons-->
 <h5 class="decklist-description-show"><%=@decklist.description%></h5>
 
 <div class="controls">
@@ -8,7 +9,7 @@
 </div>
 
 
-
+<!--uses decklist sorting method in controller to create a row of columns each with cards specific to the decklist that are linked the the card show page-->
 <div class="container deck">
     <div class="row">
         <div class="creatures col deck-column">

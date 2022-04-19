@@ -1,7 +1,9 @@
+<!--flash a sucessful account creation message if sucessfully logged in-->
 <%if flash[:message]%>
     <div class="alert alert-success" role="alert">
         <h5><%=flash[:message]%></h5>
     </div>
+<!--flash a welcome back message if user already exists-->
 <%elsif flash[:welcome]%>
     <div class="alert alert-success" role="alert">
         <h5><%=flash[:welcome]%></h5>
@@ -11,11 +13,12 @@
 <h1>Community</h1>
 
 
-
+<!--if user is logged in allow them to create a new post-->
 <%if @current_user.present? %>
         <%=link_to "New Post", new_post_path, class:"btn btn-outline-info new-post"%>
 <%end%>
     <div class="container home-feed">
+    <!--in reverse timestamp so newer posts show up first, iterate through all the post information and present it in containers-->
         <%@posts.reverse_each do |post|%>
             <div class="individual-post-container container">
 
@@ -29,6 +32,7 @@
                     </div> 
                 <% elsif post.video.present? %>
                     <div class="container">
+                    <!--gem that allows embedded youtube videos-->
                         <%video=YouTubeAddy.extract_video_id(post.video)%>
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=video%>" allowfullscreen class="video"></iframe>
                     </div> 
@@ -40,10 +44,11 @@
                     <%user=User.find post.user_id%>
                     <h5>Posted by <%=user.email%></h5>
                     <h6 class='time'> 
+                    <!--shows time the post was created-->
                         <% time = (post.created_at).strftime("%d %B %Y at %I:%M%P")%> 
                         <%= time+" UTC"%>
                     </h6>
-
+                    <!--only allows a user to edit or delete a post if they are logged in and they created the post-->
                     <%if @current_user.present?%>
                         <%if post.user_id == @current_user.id %>
                             <div class="controls">

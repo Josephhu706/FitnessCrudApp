@@ -23,4 +23,3 @@ class SessionController < ApplicationController
   end
 end
 
-# UPDATE SEED DATA ASSIGN USER TO CARDS
