@@ -53,8 +53,8 @@ Planning
 
 Before making a start on the project, I had drafted up a plan and wireframe.
 
-![](modelplan.png)
-![](userflow.png)
+![](/app/assets/images/modelplan.png)
+![](/app/assets/images/userflow.png)
 
 I actually changed my project after initial planned from a fitness app to a MTG deckbuilding app. I just thought it'd be more interesting to create something fun.
 
